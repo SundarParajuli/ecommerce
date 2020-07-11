@@ -1,0 +1,60 @@
+{
+  "_from": "cookie_js",
+  "_id": "cookie_js@1.2.2",
+  "_inBundle": false,
+  "_integrity": "sha1-Ub7V8Clm4mZHtTaNH1l1tfAZBsQ=",
+  "_location": "/cookie_js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cookie_js",
+    "name": "cookie_js",
+    "escapedName": "cookie_js",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cookie_js/-/cookie_js-1.2.2.tgz",
+  "_shasum": "51bed5f02966e26647b5368d1f5975b5f01906c4",
+  "_spec": "cookie_js",
+  "_where": "E:\\Xampp\\htdocs\\projects\\raramart-new",
+  "bugs": {
+    "url": "http://github.com/florian/cookie.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A tiny JavaScript library that simplifies cookies.",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha": "^0.4.13"
+  },
+  "github": "https://github.com/florian/cookie.js",
+  "homepage": "https://github.com/florian/cookie.js#readme",
+  "jam": {
+    "include": [
+      "cookie.js",
+      "README.md",
+      "LICENSE"
+    ],
+    "main": "cookie.js"
+  },
+  "license": "MIT",
+  "main": "cookie.js",
+  "name": "cookie_js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/florian/cookie.js.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "1.2.2"
+}

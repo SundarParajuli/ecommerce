@@ -1,0 +1,24 @@
+{
+  "name": "Rara Inc",
+  "description": "Ecommerce Plateform",
+  "main": "",
+  "authors": [
+    "Raghu Chaudhary"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ecommerce"
+  ],
+  "homepage": "raramart",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "alertify-js": "^1.11.1"
+  }
+}

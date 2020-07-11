@@ -1,0 +1,48 @@
+.required_label {
+    display: block;
+}
+
+.required_label:after {
+    content: ' *';
+    color: red;
+    font-weight: bold;
+}
+
+ .divider {
+     height: 1px;
+     margin: 9px 0;
+     overflow: hidden;
+     background-color: #e5e5e5;
+ }
+
+.select2-selection--multiple .select2-selection__rendered{
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.error{
+    color:red;
+}
+
+.preview-image {
+    width: 120px;
+    height: 100px;
+}
+
+.select2-results__option {
+    padding: 3px 16px !important;
+}
+.blink_me {
+    /*animation: blinker 4s linear infinite;*/
+    color:brown;
+    font-size: 18px;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.price-cross{
+    text-decoration: line-through;color:red;
+}

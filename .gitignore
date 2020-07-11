@@ -1,0 +1,15 @@
+/vendor
+/.idea
+/node_modules
+/bower_components
+composer.lock
+.env
+/tests
+/public/assets/uploads/*
+/public/assets/thumbs
+/public/assets/products
+/public/site/images/media
+.env_dev
+/public/.htaccess_example
+/public/sitemap.xml
+/storage/debugbar

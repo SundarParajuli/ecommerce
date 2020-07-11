@@ -1,0 +1,37 @@
+<IfModule mod_expires.c>
+        # enable the directives
+        ExpiresActive on
+
+        # send an Expires: header for each of these mimetypes (as defined by server)
+        ExpiresByType image/png "access plus 1 month"
+        ExpiresByType image/gif "access plus 1 month"
+        ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+    Options -Indexes
+    <Files ~ "^index\.php|css|js|.*\.png|.*\.jpg|.*\.gif">
+       Allow from all
+    </Files> 
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L] 
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+</IfModule>
