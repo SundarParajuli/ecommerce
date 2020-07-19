@@ -8,6 +8,10 @@ use App\Modules\Location\Repositories\ProductInterface;
 use App\Modules\Location\Repositories\ProductRepository;
 use App\Modules\Location\Repositories\SellerInterface;
 use App\Modules\Location\Repositories\SellerRepository;
+use App\Modules\Location\Repositories\ContactRepository;
+use App\Modules\Location\Repositories\ContactInterface;
+
+
 use Caffeinated\Modules\Support\ServiceProvider;
 
 class ModuleServiceProvider extends ServiceProvider
@@ -35,6 +39,7 @@ class ModuleServiceProvider extends ServiceProvider
         $this->productRegister();
         $this->officeRegister();
         $this->sellerRegister();
+        $this->contactRegister();
     }
 
     public function productRegister()
@@ -50,5 +55,8 @@ class ModuleServiceProvider extends ServiceProvider
 
     public function officeRegister(){
         $this->app->bind(OfficeInterface::class, OfficeRepository::class);
-    } 
+    }
+    public function contactRegister(){
+        $this->app->bind(ContactInterface::class, ContactRepository::class);
+    }
 }

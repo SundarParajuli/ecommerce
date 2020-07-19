@@ -82,4 +82,118 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admins','admin','permis
     Route::delete('product', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy']);
 
     Route::get('product/status', ['as' => 'product.status', 'uses' => 'ProductController@status']);
+
+
+
+/* E-Commerce */
+
+
+
+//Contact
+// INDEX
+Route::get('contact', ['as' => 'contact.index', 'uses' => 'ContactController@index']);
+
+// CREATE | STORE
+Route::get('contact/create', ['as' => 'contact.create', 'uses' => 'ContactController@create']);
+Route::post('contact', ['as' => 'contact.store', 'uses' => 'ContactController@store']);
+
+// SHOW
+/*Route::get('seller/{id}', ['as' => 'seller.show', 'uses' => 'SellerController@show'])->where('id',
+    '[0-9]+');*/
+
+// EDIT | UPDATE
+Route::get('contact/{id}/edit', ['as' => 'contact.edit', 'uses' => 'ContactController@edit'])->where('id',
+    '[0-9]+');
+Route::put('contact/{id}', ['as' => 'contact.update', 'uses' => 'ContactController@update'])->where('id',
+    '[0-9]+');
+
+// DELETE
+Route::delete('contact', ['as' => 'contact.destroy', 'uses' => 'ContactController@destroy']);
+
+Route::get('contact/status', ['as' => 'contact.status', 'uses' => 'ContactController@status']);
+
+
+
+//Order
+// INDEX
+    Route::get('order', ['as' => 'order.index', 'uses' => 'OrderController@index']);
+
+// CREATE | STORE
+    Route::get('order/create', ['as' => 'order.create', 'uses' => 'OrderController@create']);
+    Route::post('order', ['as' => 'order.store', 'uses' => 'OrderController@store']);
+
+// SHOW
+    /*Route::get('seller/{id}', ['as' => 'seller.show', 'uses' => 'SellerController@show'])->where('id',
+        '[0-9]+');*/
+
+// EDIT | UPDATE
+    Route::get('order/{id}/edit', ['as' => 'order.edit', 'uses' => 'OrderController@edit'])->where('id',
+        '[0-9]+');
+    Route::put('order/{id}', ['as' => 'order.update', 'uses' => 'OrderController@update'])->where('id',
+        '[0-9]+');
+
+// DELETE
+    Route::delete('order', ['as' => 'order.destroy', 'uses' => 'OrderController@destroy']);
+
+    Route::get('order/status', ['as' => 'order.status', 'uses' => 'OrderController@status']);
+
+
+
+
+
+
+
+//Category
+// INDEX
+    Route::get('category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
+
+// CREATE | STORE
+    Route::get('category/create', ['as' => 'category.create', 'uses' => 'CategoryController@create']);
+    Route::post('category', ['as' => 'category.store', 'uses' => 'CategoryController@store']);
+
+// SHOW
+    /*Route::get('seller/{id}', ['as' => 'seller.show', 'uses' => 'SellerController@show'])->where('id',
+        '[0-9]+');*/
+
+// EDIT | UPDATE
+    Route::get('category/{id}/edit', ['as' => 'category.edit', 'uses' => 'CategoryController@edit'])->where('id',
+        '[0-9]+');
+    Route::put('category/{id}', ['as' => 'category.update', 'uses' => 'CategoryController@update'])->where('id',
+        '[0-9]+');
+
+// DELETE
+    Route::delete('category', ['as' => 'category.destroy', 'uses' => 'CategoryController@destroy']);
+
+    Route::get('category/status', ['as' => 'category.status', 'uses' => 'CategoryController@status']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

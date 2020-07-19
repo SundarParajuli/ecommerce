@@ -97,6 +97,25 @@
                             </li>
                         @endif
 
+                        @if($menuRoles->assignedRoles('contact.index'))
+                            <li {{$menuService->activeMenu($currentRoute,['contact.index'])}}>
+                                <a href="#"><i class="icon-stack4"></i> <span>Contact</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('contact.index')}}" id="layout1">
+                                            <i class="icon-list"></i><span>List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('contact.create')}}" id="layout1">
+                                            <i class="icon-plus2"></i>
+                                            <span>Create</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+
 
 
 
