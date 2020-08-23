@@ -115,6 +115,42 @@
                                 </ul>
                             </li>
                         @endif
+                        @if($menuRoles->assignedRoles('category.index'))
+                            <li {{$menuService->activeMenu($currentRoute,['category.index'])}}>
+                                <a href="#"><i class="icon-stack4"></i> <span>Category</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('category.index')}}" id="layout1">
+                                            <i class="icon-list"></i><span>List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('category.create')}}" id="layout1">
+                                            <i class="icon-plus2"></i>
+                                            <span>Create</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                        @if($menuRoles->assignedRoles('order.index'))
+                            <li {{$menuService->activeMenu($currentRoute,['order.index'])}}>
+                                <a href="#"><i class="icon-stack4"></i> <span>Order</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('order.index')}}" id="layout1">
+                                            <i class="icon-list"></i><span>List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('order.create')}}" id="layout1">
+                                            <i class="icon-plus2"></i>
+                                            <span>Create</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
 
 
 

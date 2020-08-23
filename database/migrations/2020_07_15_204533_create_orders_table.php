@@ -15,9 +15,22 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type');
+            $table->boolean('is_delivered');
+            $table->double('discount');
+            $table->string('street_address');
+            $table->string('city');
+            $table->string('delivery_charge');
+            $table->string('total');
+            $table->string('status');
+
+
             $table->timestamps();
         });
     }
+
+
+
 
     /**
      * Reverse the migrations.
