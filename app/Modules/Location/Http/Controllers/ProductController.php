@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         $filter['name'] = $request->get('q');
         $filter["type"] = $request->get('type');
-        $filter['date'] = Carbon::today()->toDateString();
+       // $filter['date'] = Carbon::today()->toDateString();
 
         $sort['by'] = $request->get('key', 'id');
         $sort['sort'] = $request->get('sort', 'DESC');
