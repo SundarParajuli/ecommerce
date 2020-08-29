@@ -16,7 +16,7 @@ class ProductRepository implements ProductInterface
     public function findAll($limit = null, $filter = [], $sort = ['by' => 'id', 'sort' => 'DESC'], $status = [0, 1])
     {
 
-        $result = Product::when(array_keys($filter, true), function ($query) use ($filter) {
+        $result = Product::when(arrphay_keys($filter, true), function ($query) use ($filter) {
             $query->where('name', 'like', '%' . $filter['name'] . '%');
 
             if (isset($filter['date'])) {
