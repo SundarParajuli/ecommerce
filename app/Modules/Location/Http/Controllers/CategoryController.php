@@ -4,19 +4,19 @@ namespace App\Modules\Location\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Modules\Location\Http\Requests\OfficeFormRequest;
-use App\Modules\Location\Repositories\OfficeInterface;
+use App\Modules\Location\Http\Requests\CategoryFormRequest;
+use App\Modules\Location\Repositories\CategoryInterface;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
-class OfficeController extends Controller
+class CategoryController extends Controller
 {
-    protected $office;
+    protected $Category;
 
-    public function __construct(OfficeInterface $office)
+    public function __construct(CategoryInterface $Category)
     {
         $this->middleware('auth');
-        $this->office = $office;
+        $this->Category = $Category;
     }
 
     public function index(Request $request)
@@ -25,27 +25,27 @@ class OfficeController extends Controller
         $sort['by'] = $request->get('key', 'id');
         $sort['sort'] = $request->get('sort', 'DESC');
 
-        $offices = $this->office->findAll($limit = 8, $filter, $sort);
-        $offices->appends(['q' => $filter['name']]);
+        $Categorys = $this->Category->findAll($limit = 8, $filter, $sort);
+        $Categorys->appends(['q' => $filter['name']]);
 
         $sort = ($sort['sort'] == 'DESC') ? 'ASC' : 'DESC';
 
-        return view('location::office.index', compact('offices', 'sort'));
+        return view('location::Category.index', compact('Categorys', 'sort'));
     }
 
     public function create()
     {
-        return view('location::office.create');
+        return view('location::Category.create');
     }
 
-    public function store(OfficeFormRequest $request)
+    public function store(CategoryFormRequest $request)
     {
         $input = $request->all();
 
         try {
 
 
-            $this->office->save($input);
+            $this->Category->save($input);
 
             Flash::success("Data Created Successfully");
 
@@ -54,26 +54,26 @@ class OfficeController extends Controller
             Flash::error($e->getMessage());
         }
 
-        return redirect(route('office.index'));
+        return redirect(route('Category.index'));
     }
 
     public function edit($id)
     {
-        $office = $this->office->find($id);
+        $Category = $this->Category->find($id);
 
-        return view('location::office.edit', compact('office'));
+        return view('location::Category.edit', compact('Category'));
     }
 
-    public function update(OfficeFormRequest $request, $id)
+    public function update(CategoryFormRequest $request, $id)
     {
         try {
 
             $input = $request->all();
-            $this->office->update($id, $input);
+            $this->Category->update($id, $input);
 
             Flash::success("Data Updated Successfully");
 
-            return redirect(route('office.index', ['id' => $id]));
+            return redirect(route('Category.index', ['id' => $id]));
 
         } catch (\Throwable $t) {
 
@@ -88,7 +88,7 @@ class OfficeController extends Controller
 
         try {
             if ($request->has('toDelete')) {
-                $this->office->delete($ids['toDelete']);
+                $this->Category->delete($ids['toDelete']);
                 Flash::success("Data deleted Successfully");
             } else {
                 Flash::error("Please check at least one to delete");
@@ -97,7 +97,7 @@ class OfficeController extends Controller
             Flash::error($e->getMessage());
         }
 
-        return redirect(route('office.index'));
+        return redirect(route('Category.index'));
     }
 
     public function delete($id)
@@ -105,7 +105,7 @@ class OfficeController extends Controller
 
         try {
             if ($id) {
-                $this->office->delete($id);
+                $this->Category->delete($id);
                 Flash::success("Data deleted Successfully");
             } else {
                 Flash::error("Please check at least one to delete");
@@ -114,7 +114,7 @@ class OfficeController extends Controller
             Flash::error($e->getMessage());
         }
 
-        return redirect(route('office.index'));
+        return redirect(route('Category.index'));
     }
 
     public function status(Request $request)
@@ -123,7 +123,7 @@ class OfficeController extends Controller
             if ($request->ajax()) {
                 $stat = null;
                 $id = $request->input('id');
-                $status = $this->office->changeStatus($id);
+                $status = $this->Category->changeStatus($id);
                 if ($status == 0) {
                     $stat = '<i class="fa fa-toggle-off fa-2x fa-lg text-danger"></i>';
                 } elseif ($status == 1) {

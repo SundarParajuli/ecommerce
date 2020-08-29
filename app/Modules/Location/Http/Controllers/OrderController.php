@@ -9,7 +9,7 @@ use App\Modules\Location\Repositories\OfficeInterface;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
-class OfficeController extends Controller
+class OrderController extends Controller
 {
     protected $office;
 
